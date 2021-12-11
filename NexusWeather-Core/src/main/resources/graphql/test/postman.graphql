@@ -1,0 +1,5 @@
+type Postman{
+    id:ID!
+    name:String!
+    sex:Sex!
+}
