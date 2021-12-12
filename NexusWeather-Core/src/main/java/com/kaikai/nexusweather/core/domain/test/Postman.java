@@ -7,8 +7,17 @@ package com.kaikai.nexusweather.core.domain.test;
  */
 public class Postman {
     private int id;
+    private int age;
     private String name;
     private Sex sex;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public int getId() {
         return id;
@@ -34,8 +43,9 @@ public class Postman {
         this.sex = sex;
     }
 
-    public Postman(int id, String name, Sex sex) {
+    public Postman(int id,int age, String name, Sex sex) {
         this.id = id;
+        this.age=age;
         this.name = name;
         this.sex = sex;
     }

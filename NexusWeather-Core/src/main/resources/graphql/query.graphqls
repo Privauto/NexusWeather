@@ -1,0 +1,4 @@
+type Query{
+    #获取postman
+    postman(id:Int!,age:Int,name:String):Postman
+}

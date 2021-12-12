@@ -39,13 +39,30 @@
             <artifactId>graphql-spring-boot-starter</artifactId>
             <version>11.1.0</version>
         </dependency>
+        <!-- to embed GraphQL Playground tool -->
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
             <artifactId>playground-spring-boot-starter</artifactId>
             <version>11.0.0</version>
             <scope>runtime</scope>
         </dependency>
+        <!-- to embed Voyager tool -->
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>voyager-spring-boot-starter</artifactId>
+            <version>11.0.0</version>
+            <scope>runtime</scope>
+        </dependency>
         <!--graphQL-->
+
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--lombok-->
 
     </dependencies>
 
