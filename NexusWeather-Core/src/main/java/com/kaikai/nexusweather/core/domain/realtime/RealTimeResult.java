@@ -1,6 +1,5 @@
 package com.kaikai.nexusweather.core.domain.realtime;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +18,5 @@ public class RealTimeResult {
     /**
      * 实况天气
      */
-    @JSONField(name="realtime")
     RealTime realTime;
 }

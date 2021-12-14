@@ -1,9 +1,11 @@
 package com.kaikai.nexusweather.core.resolver;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
 import com.kaikai.nexusweather.core.bean.Constant;
+import com.kaikai.nexusweather.core.domain.Call;
 import com.kaikai.nexusweather.core.domain.realtime.RealTime;
-import com.kaikai.nexusweather.core.domain.realtime.RealTimeCall;
+import com.kaikai.nexusweather.core.domain.realtime.RealTimeResult;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.springframework.stereotype.Component;
 import java.net.URI;
@@ -28,7 +30,9 @@ public class RealTimeResolver implements GraphQLQueryResolver {
         String url = Constant.baseurl+"/"+Constant.version+"/"+Constant.token+"/"+longitude+","+latitude+"/realtime.json";
         HttpRequest request = HttpRequest.newBuilder(URI.create(url)).build();
         CompletableFuture<HttpResponse<String>> future = httpClient.sendAsync(request, stringBodyHandler);
-        RealTimeCall realTimeCall = JSON.parseObject(future.get().body(), RealTimeCall.class);
-        return realTimeCall.getRealTimeResult().getRealTime();
+        Call<RealTimeResult> call = JSON.parseObject(future.get().body(), new TypeReference<Call<RealTimeResult>>() {
+        });
+        RealTime realTime = call.getResult().getRealTime();
+        return realTime;
     }
 }

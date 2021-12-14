@@ -1,4 +1,4 @@
-package com.kaikai.nexusweather.core.domain.realtime;
+package com.kaikai.nexusweather.core.domain;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RealTimeCall {
+public class Call <T> {
 
     /**
      * 状态
@@ -61,5 +61,5 @@ public class RealTimeCall {
      * 实况天气Api返回结果
      */
     @JSONField(name="result")
-    RealTimeResult realTimeResult;
+    T result;
 }
