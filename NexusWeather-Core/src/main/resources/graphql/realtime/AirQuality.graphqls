@@ -1,0 +1,18 @@
+type AirQuality{
+    #pm25，质量浓度值
+    pm25:Int
+    #pm10，质量浓度值
+    pm10:Int
+    #臭氧，质量浓度值
+    o3:Int
+    #二氧化氮，质量浓度值
+    no2:Int
+    #二氧化硫，质量浓度值
+    so2:Int
+    #一氧化碳，质量浓度值
+    co:Int
+    #空气质量
+    aqi:Aqi
+    #空气质量的自然语言描述
+    description:Description
+}

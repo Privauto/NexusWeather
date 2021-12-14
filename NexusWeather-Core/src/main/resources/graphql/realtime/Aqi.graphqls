@@ -1,0 +1,6 @@
+type Aqi{
+    #国标
+    chn:Int
+    #美标
+    usa:Int
+}

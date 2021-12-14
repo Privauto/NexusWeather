@@ -1,7 +1,10 @@
-package com.kaikai.nexusweather.core.domain;
+package com.kaikai.nexusweather.core.domain.realtime;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author kaikai
@@ -10,13 +13,17 @@ import lombok.Data;
  */
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class LifeIndex {
     /**
      * 舒适度
      */
+    @JSONField(name="comfort")
     Comfort comfort;
     /**
      * 紫外线指数
      */
+    @JSONField(name="ultraviolet")
     Ultraviolet ultraviolet;
 }

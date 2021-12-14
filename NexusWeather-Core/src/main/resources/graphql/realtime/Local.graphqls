@@ -1,0 +1,8 @@
+type Local{
+    #本地降水数据获取状态
+    status:String
+    #本地降水强度（单位为雷达降水强度）
+    intensity:String
+    #本地降水观测的数据源（radar，GFS）
+    datasource:String
+}

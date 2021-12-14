@@ -1,0 +1,6 @@
+type LifeIndex{
+    #舒适度
+    comfort:Comfort
+    #紫外线指数
+    ultraviolet:Ultraviolet
+}

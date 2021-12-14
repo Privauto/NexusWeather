@@ -1,0 +1,8 @@
+type Nearest{
+    #本地降水数据获取状态
+    status:String
+    #最近的降水带距离
+    distance:Float
+    #最近的降水带降水强度（单位为雷达降水强度）
+    intensity:Float
+}

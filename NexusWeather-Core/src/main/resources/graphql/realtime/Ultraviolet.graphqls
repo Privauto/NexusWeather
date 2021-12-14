@@ -1,0 +1,6 @@
+type Ultraviolet{
+    #紫外线指数
+    index:Int
+    #对应的自然语言描述
+    desc:String
+}

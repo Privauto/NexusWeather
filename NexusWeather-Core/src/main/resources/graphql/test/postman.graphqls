@@ -1,6 +1,0 @@
-type Postman{
-    id:Int
-    age:Int
-    name:String!
-    sex:Sex!
-}

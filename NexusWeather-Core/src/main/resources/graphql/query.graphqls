@@ -1,4 +1,4 @@
 type Query{
-    #获取postman
-    postman(id:Int!,age:Int,name:String):Postman
+    #获取实况天气(longitude=经度,latitude=纬度)
+    realTime(longitude:Float!,latitude:Float!):RealTime
 }

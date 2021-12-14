@@ -1,0 +1,6 @@
+type Comfort{
+    #舒适度指数
+    index:Int
+    #对应的自然语言描述
+    desc:String
+}
