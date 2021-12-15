@@ -12,6 +12,7 @@
         "build:prod:ssg": "cross-env NODE_ENV=production vite-ssg build",
         "commit": "git add . && git cz",
         "dev": "vite --open --host --port 4000",
+        "gen:log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
         "lint": "run-s lint:*",
         "lint:types": "vue-tsc --noEmit",
         "lint:css": "stylelint --fix \"**/*.{css,scss,vue}\"",
@@ -57,9 +58,12 @@
         "@vitejs/plugin-vue": "^1.9.4",
         "@vue/compiler-sfc": "^3.2.21",
         "@vue/server-renderer": "^3.2.21",
+        "commitizen": "^4.2.4",
+        "conventional-changelog": "^3.1.24",
         "critters": "^0.0.14",
         "cross-env": "^7.0.3",
         "cypress": "8.7.0",
+        "cz-conventional-changelog": "^3.3.0",
         "eslint": "^8.2.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-cypress": "^2.12.1",
@@ -110,5 +114,10 @@
     "engines": {
         "node": ">=14.17.0",
         "pnpm": ">=6.21.1"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
 }
