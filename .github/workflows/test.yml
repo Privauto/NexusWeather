@@ -45,7 +45,7 @@ jobs:
       - run: pnpm install --frozen-lockfile=false
 
       - name: Static Analysis
-        run: pnpm lint
+        run: npm lint
 
       - name: Build Distribution
         run: pnpm build:prod:ssg
