@@ -45,11 +45,7 @@ jobs:
       - run: pnpm install --frozen-lockfile=false
 
       - name: Static Analysis
-<<<<<<< HEAD
-        run: npm lint
-=======
         run: npm run lint
->>>>>>> df2facf (ci(.github): pnpm install with forzen-lockfile)
 
       - name: Build Distribution
         run: pnpm build:prod:ssg
