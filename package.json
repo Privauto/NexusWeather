@@ -12,7 +12,7 @@
         "build:prod:ssg": "cross-env NODE_ENV=production vite-ssg build",
         "commit": "git add . && git cz",
         "dev": "vite --open --host --port 4000",
-        "gen:log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+        "gen:log": "pnpm conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
         "lint": "run-s lint:*",
         "lint:types": "vue-tsc --noEmit",
         "lint:css": "stylelint --fix \"**/*.{css,scss,vue}\"",
