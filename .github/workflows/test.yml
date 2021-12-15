@@ -42,7 +42,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: "pnpm"
 
-      - run: pnpm install
+      - run: pnpm install --frozen-lockfile=false
 
       - name: Static Analysis
         run: pnpm lint
