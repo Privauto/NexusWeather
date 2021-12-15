@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.ArrayList;
 
 /**
  * @author kaikai
@@ -16,7 +17,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Call <T> {
-
     /**
      * 状态
      */
@@ -46,12 +46,17 @@ public class Call <T> {
      * 经纬度
      */
     @JSONField(name="location")
-    String location;
+    ArrayList<String> location;
     /**
      * 服务器本次返回的utc时间戳
      */
     @JSONField(name="server_time")
     Integer server_time;
+    /**
+     * 时区
+     */
+    @JSONField(name="timezone")
+    String timezone;
     /**
      * 时区的偏移秒数，如东八区就是 28800 秒
      */
