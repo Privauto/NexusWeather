@@ -49,3 +49,7 @@ dist-ssr
 .vite-ssg-dist
 .vite-ssg-temp
 .vercel
+
+# auto gen
+/src/auto-imports.d.ts
+/src/components.d.ts
