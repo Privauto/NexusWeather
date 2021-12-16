@@ -1,4 +1,6 @@
 type Query{
     #获取实况天气(longitude=经度,latitude=纬度)
     realTime(longitude:Float!,latitude:Float!):RealTime
+    #获取天气预报(longitude=经度,latitude=纬度)
+    weather(longitude:Float!,latitude:Float!):Weather
 }

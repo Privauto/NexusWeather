@@ -16,6 +16,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DailyTime {
+    /**
+     * 时间
+     */
     @JSONField(name="time")
     String time;
 }

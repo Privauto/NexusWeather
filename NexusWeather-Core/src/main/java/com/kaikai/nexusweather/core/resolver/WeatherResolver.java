@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.kaikai.nexusweather.core.bean.Constant;
 import com.kaikai.nexusweather.core.domain.Call;
-import com.kaikai.nexusweather.core.domain.weather.WeatherResult;
+import com.kaikai.nexusweather.core.domain.weather.Weather;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.springframework.stereotype.Component;
 import java.net.URI;
@@ -25,13 +25,13 @@ public class WeatherResolver implements GraphQLQueryResolver {
     HttpClient httpClient = HttpClient.newHttpClient();
     HttpResponse.BodyHandler<String> stringBodyHandler = HttpResponse.BodyHandlers.ofString();
 
-    public WeatherResult realTime(Float longitude,Float latitude) throws ExecutionException, InterruptedException {
+    public Weather weather(Float longitude,Float latitude) throws ExecutionException, InterruptedException {
         String url = Constant.baseurl+"/"+Constant.version+"/"+Constant.token+"/"+longitude+","+latitude+"/weather.json";
         HttpRequest request = HttpRequest.newBuilder(URI.create(url)).build();
         CompletableFuture<HttpResponse<String>> future = httpClient.sendAsync(request, stringBodyHandler);
-        Call<WeatherResult> call = JSON.parseObject(future.get().body(), new TypeReference<Call<WeatherResult>>() {
+        Call<Weather> call = JSON.parseObject(future.get().body(), new TypeReference<Call<Weather>>() {
         });
-        WeatherResult weatherResult = call.getResult();
-        return weatherResult;
+        Weather weather = call.getResult();
+        return weather;
     }
 }

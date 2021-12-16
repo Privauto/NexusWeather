@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.util.Date;
+import java.time.OffsetDateTime;
 
 /**
  * @author kaikai
@@ -18,10 +18,10 @@ import java.util.Date;
 @AllArgsConstructor
 public class HourlyWindDateValue {
     /**
-     * 时间戳
+     * 日期时间
      */
     @JSONField(name="datetime")
-    Date datetime;
+    OffsetDateTime datetime;
     /**
      * 风速
      */

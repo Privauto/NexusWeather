@@ -23,7 +23,7 @@ public class Hourly {
     @JSONField(name="status")
     String status;
     /**
-     * 预报自然语言表述
+     * 预报的自然语言表述
      */
     @JSONField(name="description")
     String description;
