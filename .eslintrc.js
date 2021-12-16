@@ -14,7 +14,7 @@ module.exports = {
     'vue/multi-word-component-names': [
       'error',
       {
-        ignores: ['index'],
+        ignores: ['Index', 'index'],
       },
     ],
     '@typescript-eslint/no-namespace': ['error', { allowDeclarations: true }],
