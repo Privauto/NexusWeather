@@ -1,0 +1,6 @@
+type Description{
+    #国标
+    chn:String
+    #美标
+    usa:String
+}

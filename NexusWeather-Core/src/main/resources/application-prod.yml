@@ -1,2 +1,7 @@
 server:
   port: 8021
+
+caiyun:
+  baseurl: https://api.caiyunapp.com
+  version: v2.5
+  token: yourtoken

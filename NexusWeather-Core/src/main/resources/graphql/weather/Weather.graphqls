@@ -1,0 +1,204 @@
+type Daily {
+    #空气质量
+    air_quality: DailyAirQuality!
+    #日出与日落时刻
+    astro: [DailyAstroDateValue]!
+    #云量，最大值，平均值，最小值
+    cloudrate: [DateValueThree]!
+    #短波辐射下向通量，最大值，平均值，最小值
+    dswrf: [DateValueThree]!
+    #相对湿度，最大值，平均值，最小值
+    humidity: [DateValueThree]!
+    #生活指数
+    life_index: DailyLifeIndex!
+    #降雨量，最大值，平均值，最小值
+    precipitation: [DateValueThree]!
+    #气压，最大值，平均值，最小值
+    pressure: [DateValueThree]!
+    #天气状态
+    skycon: [DateValueSkycon]!
+    #天气预报接口调用状态
+    status: String!
+    #温度，最大值，平均值，最小值
+    temperature: [DateValueThree]!
+    #能见度，最大值，平均值，最小值
+    visibility: [DateValueThree]!
+    #风力与风向，最大值，平均值，最小值
+    wind: [DailyWindDateValueThree]!
+}
+
+type DailyAirQuality {
+    #AQI，最大值，平均值，最小值
+    aqi: [DailyAqiDateValueThree]!
+    #PM25，最大值，平均值，最小值
+    pm25: [DateValueThree]!
+}
+
+type DailyAqiDateValueThree {
+    #AQI平均值
+    avg: Aqi!
+    #日期时间
+    datetime: DateTime!
+    #AQI最大值
+    max: Aqi!
+    #AQI最小值
+    min: Aqi!
+}
+
+type DailyAstroDateValue {
+    #日期时间
+    datetime: DateTime!
+    #日出时间
+    sunrise: DailyTime!
+    #日落时间
+    sunset: DailyTime!
+}
+
+type DailyLifeIndex {
+    #洗车指数
+    carWashing: [DateDesc]!
+    #感冒指数
+    coldRisk: [DateDesc]!
+    #舒适度指数
+    comfort: [DateDesc]!
+    #穿衣指数
+    dressing: [DateDesc]!
+    #紫外线指数
+    ultraviolet: [DateDesc]!
+}
+
+type DailyTime {
+    #时间
+    time: String!
+}
+
+type DailyWindDateValueThree {
+    #风力与风向的平均值
+    avg: Wind!
+    #日期时间
+    datetime: DateTime!
+    #风力与风向的最大值
+    max: Wind!
+    #风力与风向的最小值
+    min: Wind!
+}
+
+type DateDesc {
+    #日期时间
+    datetime: DateTime!
+    #自然语言描述
+    desc: String!
+    #指数
+    index: Int!
+}
+
+type DateValue {
+    #日期时间
+    datetime: DateTime!
+    #值
+    value: Float!
+}
+
+type DateValueSkycon {
+    #日期时间
+    datetime: DateTime!
+    #值
+    value: String!
+}
+
+type DateValueThree {
+    #平均值
+    avg: Float!
+    #日期时间
+    datetime: DateTime!
+    #最大值
+    max: Float!
+    #最小值
+    min: Float!
+}
+
+type Hourly {
+    #空气指标
+    air_quality: HourlyAirQuality!
+    #云量
+    cloudrate: [DateValue]!
+    #预报的自然语言表述
+    description: String!
+    #短波辐射下向通量
+    dswrf: [DateValue]!
+    #相对湿度
+    humidity: [DateValue]!
+    #降雨
+    precipitation: [DateValue]!
+    #气压
+    pressure: [DateValue]!
+    #天气状态
+    skycon: [DateValueSkycon]!
+    #接口调用状态
+    status: String!
+    #温度
+    temperature: [DateValue]!
+    #能见度
+    visibility: [DateValue]!
+    #风力、风向
+    wind: [HourlyWindDateValue]!
+}
+
+type HourlyAirQuality {
+    #aqi
+    aqi: [HourlyAqiDateValue]!
+    #pm25，质量浓度值
+    pm25: [DateValue]!
+}
+
+type HourlyAqiDateValue {
+    #日期时间
+    datetime: DateTime!
+    #aqi
+    value: Aqi!
+}
+
+type HourlyWindDateValue {
+    #日期时间
+    datetime: DateTime!
+    #风向
+    direction: String!
+    #风速
+    speed: Float!
+}
+
+type Minutely {
+    #预报依据的数据源
+    datasource: String!
+    #预报的自然语言描述
+    description: String!
+    #预报的分钟级别的降雨强度 00~60 分钟
+    #第 0 分钟的预报值
+    #共 60 个数据项
+    precipitation: [Float]!
+    #预报的分钟级别的降雨强度 000~120 分钟
+    #第 0 分钟的预报值
+    #共 120 个数据项
+    precipitation_2h: [Float]!
+    #降雨概率
+    #0.0~0.5 小时间的降雨概率
+    #0.5~1.0 小时间的降雨概率
+    #1.0~1.5 小时间的降雨概率
+    #1.5~2.0 小时间的降雨概率
+    probability: [Float]!
+    #接口调用状态
+    status: String!
+}
+type Weather {
+    #天级预报接口
+    daily: Daily!
+    forecast_keypoint: String!
+    #小时级预报接口
+    hourly: Hourly!
+    #分钟级预报接口
+    minutely: Minutely!
+    primary: Int!
+    #实时天气
+    realtime: RealTime!
+}
+scalar DateTime

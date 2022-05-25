@@ -8,6 +8,7 @@ class NexusWeatherCoreApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }
